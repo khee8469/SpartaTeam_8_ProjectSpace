@@ -2,6 +2,7 @@
 #include <random>
 
 #include "GameManager.h"
+#include "Character.h"
 #include "Monster.h"
 
 using namespace std;
@@ -77,7 +78,7 @@ void GameManager::battle(Character* player)
 
 			if (player->xp > player->xpLimit) 
 			{
-				player->level++;
+				//player->getLevel();
 				player->xpLimit *= 2;
 				cout << "Level Up!" << endl;
 			}
@@ -88,6 +89,7 @@ void GameManager::battle(Character* player)
 
 			break;
 		}
+
 		if(player->health <= 0)
 		{
 			cout << "You have fallen..." << endl;
