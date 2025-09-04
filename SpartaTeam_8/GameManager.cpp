@@ -13,8 +13,7 @@ Monster GameManager::spawnMonsters()
 
 void GameManager::battle(Character* player) 
 {
-	int turns = 0;
-	int targetIdx = 0;
+	int turns = 0, targetIdx = 0, enemySize = 0;
 	vector<Monster> enemy;
 
 	for (int i = 0; i < 3; i++) // will make it random(1 ~ 3) later.
@@ -22,14 +21,16 @@ void GameManager::battle(Character* player)
 		enemy.push_back(spawnMonsters());
 	}
 
+	enemySize = enemy.size();
+
 	while (true)
 	{
 		++turns;
 
-		// battle Logic
+		// battle Logic here
+
 		if(enemy[targetIdx].health <= 0)
 		{
-			//takeDamage(dealt);
 			enemy.erase(targetIdx);
 		}
 
@@ -38,7 +39,27 @@ void GameManager::battle(Character* player)
 			cout << "You have won the battle!" << endl;
 
 			/* codes for winning condition. */
-			
+			int earnedXP, earnedGold;
+
+			earnedXP = player->xp += random() * player->level;
+			earnedGold = player->gold += random() * player->level;
+
+			player->gold += earnedGold;
+			player->xp += earnedXP;
+
+			cout << "You have earned " << earnedXP << " XP, " << earnedGold << " Golds." << endl;
+
+			if (player->xp > player->xpLimit) 
+			{
+				player->level++;
+				player->xpLimit *= 2;
+				cout << "Level Up!" << endl;
+			}
+			else
+			{
+				player->xp += earnedXP;
+			}
+
 			break;
 		}
 		if(player->health <= 0)
