@@ -23,7 +23,7 @@ private:
     std::string name;           
     int level;                  
     int currentHealth;          
-    int maxHealth;             // 최대 체력
+    int maxHealth;             
     int attack;                
     int experience;            
     int gold;                  
