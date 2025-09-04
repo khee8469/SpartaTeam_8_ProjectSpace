@@ -11,6 +11,6 @@ protected:
 	string name;
 
 public:
-	string getName() { return name; }
+	string getName() const { return name; }
 	virtual void Use(Character* character) = 0;
 };

@@ -6,9 +6,9 @@ class HealthPotion : public Item
 private:
 	int healthRestore;
 public:
-	HealthPotion(string name_ = "HealthPotion", int healthRestore = 50)
+	HealthPotion(int healthRestore = 50)
 	{
-		name = name_;
+		this->name = "HealthPotion";
 		this->healthRestore = healthRestore;
 	}
 

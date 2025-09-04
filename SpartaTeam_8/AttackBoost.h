@@ -6,9 +6,9 @@ class AttackBoost : public Item
 private:
 	int attackIncrease;
 public:
-	AttackBoost(string name_ = "AttackBoost", int attackIncrease = 10)
+	AttackBoost(int attackIncrease = 10)
 	{
-		name = name_;
+		this->name = "AttackBoost";
 		this->attackIncrease = attackIncrease;
 	}
 

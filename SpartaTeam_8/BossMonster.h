@@ -4,11 +4,7 @@
 class BossMonster : public Monster
 {
 public:
-	BossMonster(int level, string name = "BossMonster", int health = 20, int attack = 5)
-		: Monster(level, name, health, attack)
-	{
+	BossMonster(int level);
 
-	}
-
-
+	Item* dropItem() override;
 };
