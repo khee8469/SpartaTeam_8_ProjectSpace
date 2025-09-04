@@ -1,4 +1,5 @@
 #include <vector>
+#include <random>
 
 #include "GameManager.h"
 #include "Monster.h"
@@ -39,10 +40,9 @@ void GameManager::battle(Character* player)
 			cout << "You have won the battle!" << endl;
 
 			/* codes for winning condition. */
-			int earnedXP, earnedGold;
-
-			earnedXP = player->xp += random() * player->level;
-			earnedGold = player->gold += random() * player->level;
+			
+			int earnedXP = player->xp += rand() * player->level; // rand() is placeholder.
+			int earnedGold = player->gold += rand() * player->level;// rand() is placeholder.
 
 			player->gold += earnedGold;
 			player->xp += earnedXP;
