@@ -335,6 +335,6 @@ FodyWeavers.xsd
 *.msm
 *.msp
 .idea/
-#SpartaTeam_8/*.vcxproj
-#SpartaTeam_8/*.vcxproj.filters
-#SpartaTeam_8/*.vcxproj.users
+SpartaTeam_8/*.vcxproj
+SpartaTeam_8/*.vcxproj.filters
+SpartaTeam_8/*.vcxproj.users
