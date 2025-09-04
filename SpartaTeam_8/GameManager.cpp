@@ -8,8 +8,34 @@ using namespace std;
 
 Monster GameManager::spawnMonsters() 
 {
+	Monster monster;
+
 	// will make it generates monster randomly.
-	return Monster(/*parameters*/);
+	while (!monster)
+	{
+		switch (rand())
+		{
+		case 1:
+			// create goblin
+			monster = Goblin();
+			break;
+
+		case 2:
+			// create Orc
+			monster = Orc();
+			break;
+
+		case 3:
+			// create Troll
+			monster = Troll();
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	return monster;
 }
 
 void GameManager::battle(Character* player) 
